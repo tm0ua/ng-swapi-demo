@@ -1,0 +1,7 @@
+<!-- <p>characters works {{ id }}!</p> -->
+<p>characters works!</p>
+<ul>
+    @for (person of people$ | async; track person.name) {
+        <li>{{ person.name }}</li>
+    }
+</ul>
