@@ -1,5 +1,8 @@
 <!-- <p>characters works {{ id }}!</p> -->
 <p>characters works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
 <ul>
     @for (person of people$ | async; track person.name) {
         <li>{{ person.name }}</li>

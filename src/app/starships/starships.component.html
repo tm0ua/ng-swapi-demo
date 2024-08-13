@@ -1,1 +1,9 @@
 <p>starships works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
+<ul>
+    @for (starship of starships$ | async; track starship.name) {
+        <li>{{ starship.name }}</li>
+    }
+</ul>

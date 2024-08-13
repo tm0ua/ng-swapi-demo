@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, LoaderComponent],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.less'
 })
@@ -16,10 +17,11 @@ export class CharactersComponent {
   //   this.id = id;
   // }
   public people$: Observable<any> | undefined;
+  public isLoading = true;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.people$ = this.api.getPeople();
+    this.people$ = this.api.getPeople().pipe(tap(() => this.isLoading = false));
   }
 }
