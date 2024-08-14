@@ -1,0 +1,9 @@
+<p>films works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
+<ul>
+    @for (film of films$ | async; track film.title) {
+        <li>{{ film.title }}</li>
+    }
+</ul>
