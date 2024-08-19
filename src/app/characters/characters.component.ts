@@ -3,11 +3,12 @@ import { ApiService } from '../api.service';
 import { Observable, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { LoaderComponent } from '../loader/loader.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [AsyncPipe, LoaderComponent],
+  imports: [AsyncPipe, LoaderComponent, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.less'
 })

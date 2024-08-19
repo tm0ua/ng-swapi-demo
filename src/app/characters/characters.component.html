@@ -5,6 +5,7 @@
 }
 <ul>
     @for (person of people$ | async; track person.name) {
-        <li>{{ person.name }}</li>
+        <li><a routerLink="/characters/character-details" routerLinkActive="active" ariaCurrentWhenActive="page">{{ person.name }}</a></li>
     }
 </ul>
+<router-outlet></router-outlet>
