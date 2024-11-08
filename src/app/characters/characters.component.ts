@@ -13,10 +13,6 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './characters.component.less'
 })
 export class CharactersComponent {
-  // @Input()
-  // set id(id: string) {
-  //   this.id = id;
-  // }
   public people$: Observable<any> | undefined;
   public isLoading = true;
 
@@ -24,5 +20,9 @@ export class CharactersComponent {
 
   ngOnInit() {
     this.people$ = this.api.getPeople().pipe(tap(() => this.isLoading = false));
+  }
+
+  public getId(url: string) {
+    return this.api.getId(url);
   }
 }

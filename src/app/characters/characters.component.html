@@ -5,7 +5,11 @@
 }
 <ul>
     @for (person of people$ | async; track person.name) {
-        <li><a routerLink="/characters/character-details" routerLinkActive="active" ariaCurrentWhenActive="page">{{ person.name }}</a></li>
+        <!-- Use bracket[] to bind routerLink since we are using string concatenation to get id. -->
+        <li><a [routerLink]="'character-details/' + getId(person.url)" routerLinkActive="active" ariaCurrentWhenActive="page">{{ person.name }}</a></li>
+
+        <!-- This example works with the concept of loading a new character details page each time a character is clicked. -->
+        <!-- <li><a [routerLink]="'/characters/character-details/' + getId(person.url)" routerLinkActive="active" ariaCurrentWhenActive="page">{{ person.name }}</a></li> -->
     }
 </ul>
 <router-outlet></router-outlet>

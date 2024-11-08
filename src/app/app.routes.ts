@@ -10,10 +10,16 @@ export const routes: Routes = [
         component: CharactersComponent,
         children: [
             {
-                path:'character-details', component: CharacterDetailsComponent
+                path:'character-details/:id', component: CharacterDetailsComponent
             }
         ]
-     },
+    },
+
+    /**
+     * This example will load a new character details page each time a character link is clicked.
+     */
+    // { path: 'characters/character-details/:id', component: CharacterDetailsComponent },
+
     { path: 'starships-component', component: StarshipsComponent },
     { path: 'films-component', component: FilmsComponent },
 ];

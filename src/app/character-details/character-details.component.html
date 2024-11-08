@@ -1,1 +1,21 @@
 <p>character-details works!</p>
+@if (person$ | async; as person) {
+    @if (person) {
+        <ul>
+            @for (item of person | keyvalue; track $index) {
+                <li>{{ item.key }}: {{ item.value }}</li>
+            }
+        </ul>
+
+        <!-- Example w/o using list -->
+        <!--
+        <div>name: {{ person.name }}</div>
+        <div>height: {{ person.height }}</div>
+        <div>mass: {{ person.mass }}</div>
+        -->
+        <!-- add the rest of the character detials here -->
+
+    } @else {
+        <div>Error getting character details!</div>
+    }
+}    
