@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
 
+const baseUrl = "https://swapi.dev/api";
+const peopleUrl = `${baseUrl}/people`;
+const starshipsUrl = `${baseUrl}/starships`;
+const filmsUrl = `${baseUrl}/films`;
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'https://swapi.dev/api';
 
   constructor(private http: HttpClient) { }
 
@@ -16,8 +20,7 @@ export class ApiService {
   }
 
   public getPeople() {
-    const url = `${this.baseUrl}/people/`;
-    return this.http.get(url).pipe(
+    return this.http.get(peopleUrl).pipe(
       map((resp: any) => resp.results),
       catchError((err: any) => {
         console.log('caught people error and rethrowing', err);
@@ -32,8 +35,7 @@ export class ApiService {
    * @returns the character details
    */
   public getPersonById(id: string) {
-    const url = `${this.baseUrl}/people/${id}/`;
-    return this.http.get(url).pipe(
+    return this.http.get(`${peopleUrl}/${id}`).pipe(
       map((resp: any) => resp),
       catchError((err: any) => {
         console.log('caught person detail error and rethrowing', err);
@@ -58,8 +60,7 @@ export class ApiService {
   }
 
   public getStarships() {
-    const url = `${this.baseUrl}/starships/`;
-    return this.http.get(url).pipe(
+    return this.http.get(starshipsUrl).pipe(
       map((resp: any) => resp.results),
       catchError((err: any) => {
         console.log('caught starships error and rethrowing', err);
@@ -69,8 +70,7 @@ export class ApiService {
   }
 
   public getStarshipById(id: string) {
-    const url = `${this.baseUrl}/starships/${id}/`;
-    return this.http.get(url).pipe(
+    return this.http.get(`${starshipsUrl}/${id}`).pipe(
       map((resp: any) => resp),
       catchError((err: any) => {
         console.log('caught starship detail error and rethrowing');
@@ -80,8 +80,7 @@ export class ApiService {
   }
 
   public getFilms() {
-    const url = `${this.baseUrl}/films/`;
-    return this.http.get(url).pipe(
+    return this.http.get(filmsUrl).pipe(
       map((resp: any) => resp.results),
       catchError((err: any) => {
         console.log('caught films error and rethrowing', err);
