@@ -3,6 +3,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { FilmsComponent } from './films/films.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
+import { StarshipDetailsComponent } from './starship-details/starship-details.component';
 
 export const routes: Routes = [
     {
@@ -10,6 +11,10 @@ export const routes: Routes = [
         component: CharactersComponent,
         children: [
             {
+                /**
+                 * This example loads a new section of the parent page each time a link is clicked.
+                 * Does not reload/navigate away from the parent page.
+                 */
                 path:'character-details/:id', component: CharacterDetailsComponent
             }
         ]
@@ -20,6 +25,10 @@ export const routes: Routes = [
      */
     // { path: 'characters/character-details/:id', component: CharacterDetailsComponent },
 
-    { path: 'starships-component', component: StarshipsComponent },
+    { path: 'starships', component: StarshipsComponent },
+    /**
+     * This example loads/navigates to a new page each time a link is clicked.
+     */
+    { path: 'starships/starship-details/:id', component: StarshipDetailsComponent },
     { path: 'films-component', component: FilmsComponent },
 ];

@@ -1,0 +1,13 @@
+<p>starship-details works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
+@if (starship$ | async; as starship) {
+    @if (starship) {
+        <ul>
+            @for (item of starship | keyvalue; track $index) {
+                <li>{{ item.key }}: {{ item.value }}</li>
+            }
+        </ul>
+    }
+}

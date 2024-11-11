@@ -22,7 +22,7 @@ export class CharactersComponent {
     this.people$ = this.api.getPeople().pipe(tap(() => this.isLoading = false));
   }
 
-  public getId(url: string) {
+  public getId(url: string): string {
     return this.api.getId(url);
   }
 }

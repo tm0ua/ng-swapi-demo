@@ -4,6 +4,7 @@
 }
 <ul>
     @for (starship of starships$ | async; track starship.name) {
-        <li>{{ starship.name }}</li>
+        <!-- This loads/navigates to a new details page each time a starship is clicked. -->
+        <li><a [routerLink]="'/starships/starship-details/' + getId(starship.url)" routerLinkActive="active" ariaCurrentWhenActive="page">{{ starship.name }}</a></li>
     }
 </ul>

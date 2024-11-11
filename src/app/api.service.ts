@@ -10,8 +10,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public getId(url: string): string | undefined {
-    return url.match(/\d+/)?.[0];
+  public getId(url: string): string {
+    // Return empty string if undefined.
+    return url.match(/\d+/)?.[0] ?? "";
   }
 
   public getPeople() {
@@ -65,6 +66,17 @@ export class ApiService {
         return throwError(() => err);
       })
     );
+  }
+
+  public getStarshipById(id: string) {
+    const url = `${this.baseUrl}/starships/${id}/`;
+    return this.http.get(url).pipe(
+      map((resp: any) => resp),
+      catchError((err: any) => {
+        console.log('caught starship detail error and rethrowing');
+        return throwError(() => err);
+      })
+    )
   }
 
   public getFilms() {
