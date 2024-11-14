@@ -1,0 +1,7 @@
+<p>film-details works!</p>
+<ul>
+    <!-- Pipes can be chained together for simplicity. -->
+    @for (item of details$ | async | keyvalue; track $index) {
+        <li>{{ item.key }}: {{ item.value }}</li>
+    }    
+</ul>

@@ -4,6 +4,18 @@
 }
 <ul>
     @for (film of films$ | async; track film.title) {
-        <li>{{ film.title }}</li>
+        <!-- onItemClick passes actual object from the view to the model. -->
+        <li (click)="onItemClick(film)">{{ film.title }}</li>
     }
 </ul>
+<!-- This example implements the film-details component instead of routing to it. -->
+<app-film-details [details$]="filmDetails$"></app-film-details>
+
+<!-- @if (filmDetails) {
+    <p>films-details works!</p>
+    <ul>
+        @for (item of filmDetails | keyvalue; track $index) {
+            <li>{{ item.key }}: {{ item.value }}</li>
+        }
+    </ul>
+} -->

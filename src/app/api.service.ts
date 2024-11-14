@@ -88,4 +88,19 @@ export class ApiService {
       })
     );
   }
+
+  /**
+   * Gets the film details using the film url.
+   * @param url the film url
+   * @returns the film details
+   */
+  public getFilmDetails(url: string) {
+    return this.http.get(url).pipe(
+      map((resp: any) => resp),
+      catchError((err: any) => {
+        console.log('caught film detail error and rethrowing', err);
+        return throwError(() => err);
+      })
+    );
+  }
 }
