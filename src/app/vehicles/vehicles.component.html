@@ -4,6 +4,15 @@
 }
 <ul>
     @for (vehicle of vehicles$ | async; track $index) {
-        <li>{{ vehicle.name }}</li>
+        <li (click)="onItemClick(vehicle)">{{ vehicle.name }}</li>
     }
 </ul>
+<!-- This example does not require a vehicle-details component to be created. -->
+@if (vehicleDetials$ | async; as vehicleDetails) {
+    <p>vehicle-details works!</p>
+    <ul>
+        @for (item of vehicleDetails | keyvalue; track $index) {
+            <li>{{ item.key}}: {{ item.value}}</li>
+        }
+    </ul>
+}

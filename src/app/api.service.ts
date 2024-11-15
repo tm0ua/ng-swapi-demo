@@ -115,4 +115,18 @@ export class ApiService {
     );
   }
 
+  /**
+   * Gets the vehicle details using the vehicle url.
+   * @param url the vehicle url
+   * @returns the vehicle details
+   */
+  public getVehicleDetails(url: string) {
+    return this.http.get(url).pipe(
+      map((resp: any) => resp),
+      catchError((err: any) => {
+        console.log('caught vehicle detail error and rethrowing', err);
+        return throwError(() => err);
+      })
+    );
+  }
 }
