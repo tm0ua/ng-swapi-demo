@@ -1,0 +1,9 @@
+<p>vehicles works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
+<ul>
+    @for (vehicle of vehicles$ | async; track $index) {
+        <li>{{ vehicle.name }}</li>
+    }
+</ul>

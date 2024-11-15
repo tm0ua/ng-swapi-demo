@@ -6,6 +6,7 @@ const baseUrl = "https://swapi.dev/api";
 const peopleUrl = `${baseUrl}/people`;
 const starshipsUrl = `${baseUrl}/starships`;
 const filmsUrl = `${baseUrl}/films`;
+const vehiclesUrl = `${baseUrl}/vehicles`;
 
 @Injectable({
   providedIn: 'root'
@@ -103,4 +104,15 @@ export class ApiService {
       })
     );
   }
+
+  public getVehicles() {
+    return this.http.get(vehiclesUrl).pipe(
+      map((resp: any) => resp.results),
+      catchError((err: any) => {
+        console.log('caught vehicles error and rethrowing', err);
+        return throwError(() => err);
+      })
+    );
+  }
+
 }

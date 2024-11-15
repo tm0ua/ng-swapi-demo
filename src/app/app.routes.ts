@@ -4,6 +4,7 @@ import { StarshipsComponent } from './starships/starships.component';
 import { FilmsComponent } from './films/films.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { StarshipDetailsComponent } from './starship-details/starship-details.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,6 @@ export const routes: Routes = [
      * This example loads/navigates to a new page each time a link is clicked.
      */
     { path: 'starships/starship-details/:id', component: StarshipDetailsComponent },
-    { path: 'films-component', component: FilmsComponent },
+    { path: 'films', component: FilmsComponent },
+    { path: 'vehicles', component: VehiclesComponent },
 ];
