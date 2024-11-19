@@ -140,4 +140,14 @@ export class ApiService {
       })
     );
   }
+
+  public getSpecieById(id: string) {
+    return this.http.get(`${speciesUrl}/${id}`).pipe(
+      map((resp: any) => resp),
+      catchError((err: any) => {
+        console.log('caught specie details error and rethrowing', err);
+        return throwError(() => err);
+      })
+    );
+  }
 }

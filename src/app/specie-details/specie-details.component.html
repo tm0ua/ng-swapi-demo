@@ -1,0 +1,9 @@
+<p>specie-details works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
+<ul>
+    @for (item of specieDetails$ | async | keyvalue; track $index) {
+        <li>{{ item.key }}: {{ item.value }}</li>
+    }
+</ul>

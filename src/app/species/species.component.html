@@ -1,6 +1,9 @@
 <p>species works!</p>
+@if (isLoading) {
+    <app-loader></app-loader>
+}
 <ul>
-    @for (species of species$ | async; track $index) {
-        <li>{{ species.name }}</li>
+    @for (specie of species$ | async; track $index) {
+        <li><a [routerLink]="'/species/specie-details/' + getId(specie.url)" routerLinkActive="active" ariaCurrentWhenActive="page">{{ specie.name }}</a></li>
     }
 </ul>
