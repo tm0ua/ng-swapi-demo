@@ -7,6 +7,7 @@ const peopleUrl = `${baseUrl}/people`;
 const starshipsUrl = `${baseUrl}/starships`;
 const filmsUrl = `${baseUrl}/films`;
 const vehiclesUrl = `${baseUrl}/vehicles`;
+const speciesUrl = `${baseUrl}/species`;
 
 @Injectable({
   providedIn: 'root'
@@ -125,6 +126,16 @@ export class ApiService {
       map((resp: any) => resp),
       catchError((err: any) => {
         console.log('caught vehicle detail error and rethrowing', err);
+        return throwError(() => err);
+      })
+    );
+  }
+
+  public getSpecies() {
+    return this.http.get(speciesUrl).pipe(
+      map((resp: any) => resp.results),
+      catchError((err: any) => {
+        console.log('caught species error and rethrowing', err);
         return throwError(() => err);
       })
     );

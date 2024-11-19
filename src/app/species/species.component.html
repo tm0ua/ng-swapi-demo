@@ -1,0 +1,6 @@
+<p>species works!</p>
+<ul>
+    @for (species of species$ | async; track $index) {
+        <li>{{ species.name }}</li>
+    }
+</ul>

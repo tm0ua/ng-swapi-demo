@@ -5,6 +5,7 @@ import { FilmsComponent } from './films/films.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { StarshipDetailsComponent } from './starship-details/starship-details.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { SpeciesComponent } from './species/species.component';
 
 export const routes: Routes = [
     {
@@ -33,4 +34,5 @@ export const routes: Routes = [
     { path: 'starships/starship-details/:id', component: StarshipDetailsComponent },
     { path: 'films', component: FilmsComponent },
     { path: 'vehicles', component: VehiclesComponent },
+    { path: 'species', component: SpeciesComponent },
 ];
