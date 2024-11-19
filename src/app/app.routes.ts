@@ -34,5 +34,5 @@ export const routes: Routes = [
     { path: 'starships/starship-details/:id', component: StarshipDetailsComponent },
     { path: 'films', component: FilmsComponent },
     { path: 'vehicles', component: VehiclesComponent },
-    { path: 'species', component: SpeciesComponent },
+    { path: 'species', loadComponent: () => import('./species/species.component').then((m) => m.SpeciesComponent) },
 ];
