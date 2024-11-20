@@ -8,8 +8,12 @@
         <li (click)="onItemClick(film)">{{ film.title }}</li>
     }
 </ul>
+<!-- Items clicked in child component <app-film-details> will appear here. -->
+@if (details) {
+    <div>clicked {{ details.key }}: {{ details. value }}</div>
+}
 <!-- This example implements the film-details component instead of routing to it. -->
-<app-film-details [details$]="filmDetails$"></app-film-details>
+<app-film-details [details$]="filmDetails$" (filmDetailsClickedEvent)="filmDetailsClicked($event)"></app-film-details>
 
 <!-- @if (filmDetails) {
     <p>films-details works!</p>

@@ -2,6 +2,6 @@
 <ul>
     <!-- Pipes can be chained together for simplicity. -->
     @for (item of details$ | async | keyvalue; track $index) {
-        <li>{{ item.key }}: {{ item.value }}</li>
+        <li (click)="onItemClick(item)">{{ item.key }}: {{ item.value }}</li>
     }    
 </ul>
