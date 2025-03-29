@@ -1,0 +1,4 @@
+<p>parent works!</p>
+<button (click)="sendToChild()">Send To Child</button>
+<div>{{ childMsg }}</div>
+<app-child [text]="parentMsg" (childClickedEvent)="display($event)"></app-child>
