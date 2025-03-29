@@ -5,6 +5,7 @@ import { FilmsComponent } from './films/films.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { StarshipDetailsComponent } from './starship-details/starship-details.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { DemosComponent } from './demos/demos.component';
 
 export const routes: Routes = [
     {
@@ -41,4 +42,6 @@ export const routes: Routes = [
      */
     { path: 'species', loadComponent: () => import('./species/species.component').then((m) => m.SpeciesComponent) },
     { path: 'species/specie-details/:id', loadComponent: () => import('./specie-details/specie-details.component').then((m) => m.SpecieDetailsComponent) },
+
+    { path: 'demos', component: DemosComponent },
 ];
