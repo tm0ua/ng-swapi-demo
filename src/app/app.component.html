@@ -6,15 +6,5 @@
 <mat-spinner *ngIf="loading"></mat-spinner> -->
 
 <h1>{{ appTitle }}</h1>
-<nav>
-  <ul>
-    <li><a routerLink="/characters" routerLinkActive="active" ariaCurrentWhenActive="page">Characters</a></li>
-    <li><a routerLink="/starships" routerLinkActive="active" ariaCurrentWhenActive="page">Starships</a></li>
-    <li><a routerLink="/films" routerLinkActive="active" ariaCurrentWhenActive="page">Films</a></li>
-    <li><a routerLink="/vehicles" routerLinkActive="active" ariaCurrentWhenActive="page">Vehicles</a></li>
-    <li><a routerLink="/species" routerLinkActive="active" ariaCurrentWhenActive="page">Species</a></li>
-    <li><a routerLink="/demos" routerLinkActive="active" ariaCurrentWhenActive="page">Demos</a></li>
-  </ul>
-</nav>
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet />

@@ -19,7 +19,7 @@ export class CharacterDetailsComponent {
   constructor(private api: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Since character details page is only created once, subscribe to route params to detech url change to get id.
+    // Since character details page is only created once, subscribe to route params to detect url change to get id.
     this.route.paramMap.subscribe((params) => {
       this.isLoading = true;
       // Get character id from url. Id is set in the character component view.

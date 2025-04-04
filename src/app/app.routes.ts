@@ -6,8 +6,12 @@ import { CharacterDetailsComponent } from './character-details/character-details
 import { StarshipDetailsComponent } from './starship-details/starship-details.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { DemosComponent } from './demos/demos.component';
+import { HomeComponent } from './home/home.component';
+import { StarWarsComponent } from './star-wars/star-wars.component';
 
 export const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'star-wars', component: StarWarsComponent },
     {
         path: 'characters',
         component: CharactersComponent,

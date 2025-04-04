@@ -32,7 +32,7 @@ export class FilmsComponent {
   /**
    * Example takes in the click event from the film-details (child) component.
    * This method is binded in the view to the child attribute: filmDetailsClickedEvent.
-   * @param item flim details object
+   * @param item film details object
    */
   public filmDetailsClicked(item: any) {
     this.details = item;
