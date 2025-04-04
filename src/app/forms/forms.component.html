@@ -1,0 +1,37 @@
+<p>forms works!</p>
+<p>Template-Driven Example</p>
+<form #myForm="ngForm" (ngSubmit)="clearName()">
+    <span>
+        <label for="firstName">First Name:</label>
+        <!-- The name attribute is only needed if input is within a form tag. -->
+        <input id="firstName" type="text" [(ngModel)]="firstName" name="firstName">
+    </span>
+    <span>
+        <label for="lastName">Last Name:</label>
+        <!-- The name attribute is only needed if input is within a form tag. -->
+        <input id="lastName" type="text" [(ngModel)]="lastName" name="lastName">
+    </span>
+    <span class="result">Full Name:
+        <div>{{ firstName }} {{ lastName }}</div>
+    </span>
+    <button>Clear Name</button>
+</form>
+<p>Reactive Form Example</p>
+<form [formGroup]="autoGroup">
+    <span>
+        <label for="year">Year:</label>
+        <input id="year" type="number" formControlName="year">
+    </span>
+    <span>
+        <label for="make">Make:</label>
+        <input id="make" type="text" formControlName="make">
+    </span>
+    <span>
+        <label for="model">Model:</label>
+        <input id="model" type="text" formControlName="model">
+    </span>
+    <span class="result">Vehicle:
+        <div>{{ autoGroup.get('year')?.value }} {{ autoGroup.get('make')?.value }} {{ autoGroup.get('model')?.value }}</div>
+    </span>
+    <button (click)="clearVehicle()">Clear Vehicle</button>
+</form>

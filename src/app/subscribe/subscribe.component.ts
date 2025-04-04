@@ -15,6 +15,6 @@ export class SubscribeComponent {
   constructor(private service: ComponentService) {}
 
   public displayText() {
-    this.service.displayText('You just displayed a message here');
+    this.service.displayText('You just displayed a message here.');
   }
 }

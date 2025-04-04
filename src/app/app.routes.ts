@@ -12,6 +12,7 @@ import { StarWarsComponent } from './star-wars/star-wars.component';
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'star-wars', component: StarWarsComponent },
+    { path: 'demos', component: DemosComponent },
     {
         path: 'characters',
         component: CharactersComponent,
@@ -46,6 +47,4 @@ export const routes: Routes = [
      */
     { path: 'species', loadComponent: () => import('./species/species.component').then((m) => m.SpeciesComponent) },
     { path: 'species/specie-details/:id', loadComponent: () => import('./specie-details/specie-details.component').then((m) => m.SpecieDetailsComponent) },
-
-    { path: 'demos', component: DemosComponent },
 ];
