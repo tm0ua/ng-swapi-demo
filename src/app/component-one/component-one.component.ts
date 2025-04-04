@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponentService } from '../component.service';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
