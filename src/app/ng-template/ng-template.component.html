@@ -1,0 +1,15 @@
+<p>ng-template works!</p>
+<!-- Declare variable by using let-<variable name>.
+The "data" is passed in via "context: { data: item }". -->
+<ng-template #myTemplate let-item="data">
+    <div class="container">
+        <div>Name: {{ item.name }}</div>
+        <div>Age: {{ item.age }}</div>
+        <div>Sex: {{ item.sex }}</div>
+        <div>Hobbies: {{ item.hobbies }}</div>
+    </div>
+</ng-template>
+
+@for (item of data$ | async; track $index) {
+    <ng-container *ngTemplateOutlet="myTemplate; context: { data: item }"></ng-container>
+}

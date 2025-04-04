@@ -4,11 +4,12 @@ import { ComponentOneComponent } from '../component-one/component-one.component'
 import { ComponentTwoComponent } from '../component-two/component-two.component';
 import { ParentComponent } from "../parent/parent.component";
 import { ViewChildComponent } from "../view-child/view-child.component";
+import { NgTemplateComponent } from "../ng-template/ng-template.component";
 
 @Component({
   selector: 'app-demos',
   standalone: true,
-  imports: [ComponentOneComponent, ComponentTwoComponent, ParentComponent, ViewChildComponent],
+  imports: [ComponentOneComponent, ComponentTwoComponent, ParentComponent, ViewChildComponent, NgTemplateComponent],
   templateUrl: './demos.component.html',
   styleUrl: './demos.component.less'
 })
