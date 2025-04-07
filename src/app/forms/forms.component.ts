@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -9,9 +9,6 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
   styleUrl: './forms.component.less'
 })
 export class FormsComponent {
-  // @ViewChild ('firstNameInput') firstNameInput!: ElementRef;
-  // @ViewChild ('lastNameInput') lastNameInput!: ElementRef;
-
   /**
    * Template-Driven example.
    */

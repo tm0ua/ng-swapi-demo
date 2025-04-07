@@ -15,7 +15,6 @@ export class ComponentService {
   }
 
   public getPeople(): Observable<any> {
-    console.log("get people called.");
     return of([
       {
         "name": "John Doe",
