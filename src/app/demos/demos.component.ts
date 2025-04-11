@@ -5,11 +5,12 @@ import { NgTemplateComponent } from "../ng-template/ng-template.component";
 import { SubscribeComponent } from "../subscribe/subscribe.component";
 import { FormsComponent } from "../forms/forms.component";
 import { DirectivesComponent } from "../directives/directives.component";
+import { PipesComponent } from "../pipes/pipes.component";
 
 @Component({
   selector: 'app-demos',
   standalone: true,
-  imports: [ParentComponent, ViewChildComponent, NgTemplateComponent, SubscribeComponent, FormsComponent, DirectivesComponent],
+  imports: [ParentComponent, ViewChildComponent, NgTemplateComponent, SubscribeComponent, FormsComponent, DirectivesComponent, PipesComponent],
   templateUrl: './demos.component.html',
   styleUrl: './demos.component.less'
 })

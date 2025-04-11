@@ -40,4 +40,15 @@ export class ComponentService {
       }
     ])
   }
+
+  public getNumbers(): Observable<any> {
+    let numbers: number[] = [];
+
+    for(let i = 0; i < 10; i++) {
+      // Generate random number between 0-99.
+      numbers[i] = Math.floor(Math.random() * 100);
+    }
+
+    return of({ "numbers": numbers })
+  }
 }

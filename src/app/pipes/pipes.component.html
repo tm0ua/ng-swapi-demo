@@ -1,0 +1,22 @@
+<p>pipes works!</p>
+<div>
+    <p>Return largest value.</p>
+    @if (numbers$ | async; as numbers) {
+        <div>
+            <span>[{{ numbers }}]</span> => <span>{{ numbers | largestNumber }}</span>
+        </div>
+    }
+    <div>
+        <span>[{{ numArray }}]</span> => <span>{{ number }}</span>
+    </div>
+</div>
+<div>
+    <p>Format currencies.</p>
+    <div>USD: {{ dollars | currency: "USD" }}</div>
+    <div>YEN: {{ dollars | currency: "JPY"}}</div>
+</div>
+<div>
+    <p>Today's date.</p>
+    <!-- The param "medium" includes the time. -->
+    <div>{{ today | date: "medium" }}</div>
+</div>
