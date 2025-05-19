@@ -2,7 +2,7 @@
 @for (data of componentFourData; track $index) {
     <app-component-four [data]="data"></app-component-four>
 }
-<div>Type here to check if component render:</div>
+<div>Type here to check if component rendered:</div>
 <div><input type="text" (keyup)="changeText($event)"></div>
 <div><button (click)="changeData()">Change Data</button></div>
 <p class="note">NOTE: View console log for details.</p>
