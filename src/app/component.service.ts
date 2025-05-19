@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,8 @@ import { Observable, of, Subject } from 'rxjs';
 export class ComponentService {
   private display = new Subject<string>();
   public display$ = this.display.asObservable();
+
+  public filter$ = new BehaviorSubject(false);
 
   constructor() { }
 

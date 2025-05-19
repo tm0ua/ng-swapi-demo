@@ -24,12 +24,12 @@ export class FormsComponent {
     model: new FormControl(''),
   })
 
-  public clearName() {
+  public clearName(): void {
     this.firstName = '';
     this.lastName = '';
   }
 
-  public clearVehicle() {
+  public clearVehicle(): void {
     this.autoGroup.get('year')?.setValue('');
     this.autoGroup.get('make')?.setValue('');
     this.autoGroup.get('model')?.setValue('');
